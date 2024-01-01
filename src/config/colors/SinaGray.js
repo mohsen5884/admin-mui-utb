@@ -1,0 +1,11 @@
+export const main="#A8A8A8";
+export const c050="#FFFFFF";
+export const c100="#FFFFFF";
+export const c200="#F9F9F9";
+export const c300="#EAEAEA";
+export const c400="#C6C6C6";
+export const c500="#A8A8A8";
+export const c600="#7E7E7E";
+export const c700="#6A6A6A";
+export const c800="#4B4B4B";
+export const c900="#2A2A2A";

@@ -1,0 +1,15 @@
+export const main="#FFF200";
+export const c050="#FFFFD6";
+export const c100="#FFFFB3";
+export const c200="#FFFA89";
+export const c300="#FFF862";
+export const c400="#FFF53C";
+export const c500="#FFF200";
+export const c600="#FFDE00";
+export const c700="#FFC600";
+export const c800="#FFAD00";
+export const c900="#FF7F00";
+export const accent100="#FFFF7A";
+export const accent200="#FCFF00";
+export const accent400="#FEF300";
+export const accent700="#FFDD00";

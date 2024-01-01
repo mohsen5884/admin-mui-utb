@@ -1,0 +1,11 @@
+export const main="#457AC0";
+export const c050="#DCEEFF";
+export const c100="#B0D9FF";
+export const c200="#97BCFB";
+export const c300="#77A1E3";
+export const c400="#618ED3";
+export const c500="#457AC0";
+export const c600="#316BAE";
+export const c700="#005A95";
+export const c800="#04457D";
+export const c900="#003163";
