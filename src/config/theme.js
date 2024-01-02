@@ -9,11 +9,11 @@ const White = "#FFFFFF";
 let theme = createTheme({
   palette: {
     primary: {
-      main: red["c500"],
-      normal: red["accent700"],
+      main: gray["c500"],
+      normal: gray["c500"],
     },
     secondary: {
-      main: red["c050"],
+      main: gray["c050"],
     },
     neutral: {
       light: gray["c050"],

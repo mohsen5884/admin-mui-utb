@@ -12,9 +12,13 @@ import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import theme from "../config/theme";
 import RgbToRgba from "../functions/RgbToRgba";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { main } from "../config/colors/PaafGray";
+
 
 const SideNav = ({
   onChangeLatout,
+  layoutDirection,
   isToggled,
   setIsToggled,
   darkmodeHandler,
@@ -22,19 +26,19 @@ const SideNav = ({
 }) => {
   // for SideBar
   const [collapsed, setCollapsed] = useState(false);
-  const [rtl, setRtl] = useState(false);
+  // const [rtl, setRtl] = useState(false);
+  const { t, i18n } = useTranslation();
   const [hasImage, setHasImage] = useState(false);
 
   // handle on RTL change event
   const handleRTLChange = (e) => {
-    setRtl(e.target.checked);
+    // setRtl(e.target.checked);
     onChangeLatout(e.target.checked);
   };
 
   // handle on image change event
   const handleImageChange = (e) => {
     setHasImage(e.target.checked);
-    console.log(theme.palette.primary.light);
   };
 
   const modeHandler = (e) => {
@@ -53,7 +57,7 @@ const SideNav = ({
       toggled={isToggled}
       onBackdropClick={() => setIsToggled(false)}
       image="https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg"
-      rtl={rtl}
+      rtl={layoutDirection}
       style={{ height: "100%", top: "auto" }}
       breakPoint="md"
       backgroundColor={
@@ -70,11 +74,11 @@ const SideNav = ({
         />
         {!collapsed && (
           <Typography variant="body2" sx={styles.yourChannel}>
-            Your Channel
+            {t("agentPanel")}
           </Typography>
         )}
         {!collapsed && (
-          <Typography variant="overline">React with Mohsen</Typography>
+          <Typography variant="overline">{t("yourName")}</Typography>
         )}
       </Box>
       <Menu
@@ -93,30 +97,30 @@ const SideNav = ({
           component={<Link to="/" />}
           icon={<DashboardOutlined />}
         >
-          <Typography variant="body2">Dashboard</Typography>
+          <Typography variant="body2">{t("dashboard")}</Typography>
         </MenuItem>
         <MenuItem
           active={location.pathname === "/Content"}
           component={<Link to="/Content" />}
           icon={<SourceOutlined />}
         >
-          <Typography variant="body2">Content</Typography>
+          <Typography variant="body2">{t("communications")}</Typography>
         </MenuItem>
         <MenuItem
           active={location.pathname === "/Analytic"}
           component={<Link to="/Analytic" />}
           icon={<AnalyticsOutlined />}
         >
-          <Typography variant="body2">Analytics</Typography>
+          <Typography variant="body2">{t("salesAnalytics")}</Typography>
         </MenuItem>
         <MenuItem
           active={location.pathname === "/Customization"}
           component={<Link to="/Customization" />}
           icon={<StyleOutlined />}
         >
-          <Typography variant="body2">Customization</Typography>
+          <Typography variant="body2">{t("announcements")}</Typography>
         </MenuItem>
-        <SubMenu label="Charts" icon={<Equalizer />}>
+        <SubMenu label={t("charts")} icon={<Equalizer />}>
           <Box
             backgroundColor={
               Mode === "dark"
@@ -124,11 +128,11 @@ const SideNav = ({
                 : theme.palette.primary.light
             }
           >
-            <MenuItem>Pie charts</MenuItem>
-            <MenuItem>Line charts</MenuItem>
+            <MenuItem>{t("pieCharts")}</MenuItem>
+            <MenuItem>{t("lineCharts")}</MenuItem>
           </Box>
         </SubMenu>
-        <SubMenu label="Setting" icon={<Settings />}>
+        <SubMenu label={t("settings")} icon={<Settings />}>
           <Box
             backgroundColor={
               Mode === "dark"
@@ -136,7 +140,7 @@ const SideNav = ({
                 : theme.palette.primary.light
             }
           >
-            <MenuItem title="Collapse">
+            <MenuItem title={t("collapse")}>
               <Box
                 sx={{
                   display: "flex",
@@ -144,7 +148,7 @@ const SideNav = ({
                   justifyContent: "space-between",
                 }}
               >
-                <Typography variant="body2">Collapse</Typography>
+                <Typography variant="body2">{t("collapse")}</Typography>
                 <Switch
                   id="collapse"
                   checked={collapsed}
@@ -153,7 +157,7 @@ const SideNav = ({
                 />
               </Box>
             </MenuItem>
-            <MenuItem title="Layout">
+            <MenuItem title={t("rtl")}>
               <Box
                 sx={{
                   display: "flex",
@@ -161,16 +165,16 @@ const SideNav = ({
                   justifyContent: "space-between",
                 }}
               >
-                <Typography variant="body2">RTL</Typography>
+                <Typography variant="body2">{t("rtl")}</Typography>
                 <Switch
                   id="rtl"
-                  checked={rtl}
+                  checked={layoutDirection}
                   onChange={handleRTLChange}
                   label="Change layout"
                 />
               </Box>
             </MenuItem>
-            <MenuItem title="Dark Mode">
+            <MenuItem title={t("darkMode")}>
               <Box
                 sx={{
                   display: "flex",
@@ -178,7 +182,7 @@ const SideNav = ({
                   justifyContent: "space-between",
                 }}
               >
-                <Typography variant="body2">dark mode</Typography>
+                <Typography variant="body2">{t("darkMode")}</Typography>
                 <Switch
                   id="darkMode"
                   checked={Mode === "dark" ? true : false}
@@ -187,7 +191,7 @@ const SideNav = ({
                 />
               </Box>
             </MenuItem>
-            <MenuItem title="Image background">
+            <MenuItem title={t("imageBackMenu")}>
               <Box
                 sx={{
                   display: "flex",
@@ -195,7 +199,7 @@ const SideNav = ({
                   justifyContent: "space-between",
                 }}
               >
-                <Typography variant="body2">Image</Typography>
+                <Typography variant="body2">{t("imageBackMenu")}</Typography>
                 <Switch
                   id="imageBackground"
                   checked={hasImage}
@@ -206,10 +210,6 @@ const SideNav = ({
             </MenuItem>
           </Box>
         </SubMenu>
-
-        <MenuItem icon={<DashboardOutlined />}>
-          test
-        </MenuItem>
       </Menu>
     </Sidebar>
   );

@@ -9,25 +9,26 @@ import {
 import React from "react";
 import LatestVideoCard from "../../components/LatestVideoCard";
 import ColorText from "../../components/ColorText";
-import Content from "../contents/Content";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t, i18n } = useTranslation();
   return (
     <Box>
       <Typography sx={styles.pageTitle} variant="h5">
-        Panel Dashboard
+      {t("dashboard")}
       </Typography>
       <Box sx={styles.columnsContainer}>
         <LatestVideoCard sx={styles.item} />
         <Card sx={styles.item}>
           <CardContent>
-            <Typography variant="cardTitle">Latest post</Typography>
+            <Typography variant="cardTitle">{t("latestPost")}</Typography>
             <Box sx={styles.postAuthorSection}>
               <Avatar
                 sx={styles.authorAvatar}
                 src={require("../../assets/images/products/pvc2.jpg")}
               />
-              <Typography sx={styles.postMeta}>React With Masoud</Typography>
+              <Typography sx={styles.postMeta}>React With Mohsen</Typography>
               <Typography sx={styles.postMeta}>Jan 18, 2023</Typography>
             </Box>
             <Typography variant="body2" sx={styles.postBody}>
@@ -37,8 +38,8 @@ const Dashboard = () => {
             </Typography>
             <Divider sx={styles.divider} />
             <Box sx={styles.postState}>
-              <Typography variant="body2">Likes</Typography>
-              <Typography variant="body2">Comments</Typography>
+              <Typography variant="body2">{t("likes")}</Typography>
+              <Typography variant="body2">{t("comments")}</Typography>
               <Typography variant="h6">12</Typography>
               <Typography variant="h6">6</Typography>
             </Box>
@@ -62,11 +63,11 @@ const Dashboard = () => {
               <ColorText color={"neutral.normal"}>last 28 days</ColorText>
             </Typography>
             <Box sx={styles.videoStateRow}>
-              <Typography variant="h7">Views</Typography>
+              <Typography variant="h7">{t("views")}</Typography>
               <Typography variant="h7">225</Typography>
             </Box>
             <Box sx={styles.videoStateRow}>
-              <Typography variant="h7">Watch Time(hours)</Typography>
+              <Typography variant="h7">{t("viewsTime")}</Typography>
               <Typography variant="h7">30</Typography>
             </Box>
             <Box sx={styles.videoStateRow}>
@@ -77,7 +78,7 @@ const Dashboard = () => {
             <Typography variant="h6">Top Videos</Typography>
             <Typography variant="h8">
               <ColorText color="neutral.normal">
-                Last 48 hours . Views
+                Last 48 hours . {t("views")}
               </ColorText>
             </Typography>
             <Box sx={styles.videoStateRow}>
@@ -120,7 +121,7 @@ const Dashboard = () => {
               <Box>
                 <Box sx={styles.commentDetailsSection}>
                   <Typography sx={styles.postMeta}>
-                    React With Masoud
+                    React With Mohsen
                   </Typography>
                   <Typography sx={styles.postMeta}>2 weeks ago</Typography>
                 </Box>
@@ -145,7 +146,7 @@ const Dashboard = () => {
               <Box>
                 <Box sx={styles.commentDetailsSection}>
                   <Typography sx={styles.postMeta}>
-                    React With Masoud
+                    React With Mohsen
                   </Typography>
                   <Typography sx={styles.postMeta}>2 weeks ago</Typography>
                 </Box>
@@ -169,7 +170,7 @@ const Dashboard = () => {
               <Box>
                 <Box sx={styles.commentDetailsSection}>
                   <Typography sx={styles.postMeta}>
-                    React With Masoud
+                    React With Mohsen
                   </Typography>
                   <Typography sx={styles.postMeta}>2 weeks ago</Typography>
                 </Box>
@@ -246,7 +247,6 @@ const styles = {
   },
   columnsContainer: {
     columns: "280px 3",
-    maxWidth: 1400,
   },
   item: {
     mb: 2,

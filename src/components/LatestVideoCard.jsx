@@ -1,11 +1,13 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const LatestVideoCard = (props) => {
+  const { t, i18n } = useTranslation();
   return (
     <Card {...props}>
       <CardContent>
-        <Typography variant="cardTitle">Latest Video Performance</Typography>
+        <Typography variant="cardTitle">{t("latestVideoPerformance")}</Typography>
         <Box sx={styles.latestVideoContainer}>
           <Box
             sx={styles.latestVideoThumbnail}
@@ -13,29 +15,29 @@ const LatestVideoCard = (props) => {
             src={require("../assets/images/products/Furniture2.png")}
           ></Box>
           <Typography sx={styles.latestVideoTitle}>
-            ReactJs Search bar in 5 min
+          {t("firstTimeHours",{time:6})}    
           </Typography>
         </Box>
         <Typography variant="h7" sx={styles.latestVideoTimeLabel}>
-          First 6 hours:
+        {t("firstTimeHours",{time:6})} 
         </Typography>
         <Box sx={styles.latestVideoStateRow}>
-          <Typography variant="h7">Views</Typography>
+          <Typography variant="h7">{t("views")} </Typography>
           <Typography variant="h7">225</Typography>
         </Box>
         <Box sx={styles.latestVideoStateRow}>
-          <Typography variant="h7">Watch time</Typography>
+          <Typography variant="h7">{t("watchTime")}</Typography>
           <Typography variant="h7">30</Typography>
         </Box>
         <Box sx={styles.latestVideoStateRow}>
-          <Typography variant="h7">Likes</Typography>
+          <Typography variant="h7">{t("likes")}</Typography>
           <Typography variant="h7">23</Typography>
         </Box>
         <Typography sx={styles.cardAction} variant="link">
           GO TO VIDEO ANALYTICS
         </Typography>
         <Typography sx={styles.cardAction} variant="link">
-          SEE COMMENTS(12)
+        {t("seeComments")}(12)
         </Typography>
       </CardContent>
     </Card>

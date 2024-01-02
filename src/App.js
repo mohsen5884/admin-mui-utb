@@ -7,6 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import "./App.css";
+import { useTranslation } from "react-i18next";
 import theme from "../src/config/theme";
 import React, { useState } from "react";
 import "@fontsource/roboto/300.css";
@@ -27,6 +28,14 @@ const lightTheme = createTheme(theme, {
 });
 
 function App() {
+
+  // for Multi lang
+  const { t, i18n } = useTranslation();
+
+  const handleTrans = (code) => {
+    i18n.changeLanguage(code);
+  };
+
   // for SideBar
   const [layoutDirection, setLayoutDirection] = useState(false);
   const [toggled, setToggled] = useState(false);
@@ -52,11 +61,13 @@ function App() {
           }}
         >
           <CssBaseline />
-          <AppHeader setIsToggled={(e) => ToggleHandler(e)} Mode={themeMode} />
+          <AppHeader setIsToggled={(e) => ToggleHandler(e)} Mode={themeMode} langHandler={handleTrans} setLayoutDirection={setLayoutDirection}/>
           <Box sx={styles.container}>
             <BrowserRouter>
               <SideNave
                 onChangeLatout={(e) => setLayoutDirection(e)}
+                setLayoutDirection={setLayoutDirection}
+                layoutDirection={layoutDirection}
                 isToggled={toggled}
                 setIsToggled={(e) => ToggleHandler(e)}
                 darkmodeHandler={(e) => darkmodeHandler(e)}
