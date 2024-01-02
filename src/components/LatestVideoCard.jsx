@@ -12,7 +12,7 @@ const LatestVideoCard = (props) => {
           <Box
             sx={styles.latestVideoThumbnail}
             component={"img"}
-            src={require("../assets/images/products/Furniture2.png")}
+            src={require("../assets/images/posts/1.jpg")}
           ></Box>
           <Typography sx={styles.latestVideoTitle}>
           {t("firstTimeHours",{time:6})}    

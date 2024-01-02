@@ -26,7 +26,7 @@ const Dashboard = () => {
             <Box sx={styles.postAuthorSection}>
               <Avatar
                 sx={styles.authorAvatar}
-                src={require("../../assets/images/products/pvc2.jpg")}
+                src={require("../../assets/images/accounts/myimage.JPG")}
               />
               <Typography sx={styles.postMeta}>React With Mohsen</Typography>
               <Typography sx={styles.postMeta}>Jan 18, 2023</Typography>
@@ -116,7 +116,7 @@ const Dashboard = () => {
             <Box sx={styles.commentsRow}>
               <Avatar
                 sx={styles.avatar}
-                src={require("../../assets/images/products/Furniture2.png")}
+                src={require("../../assets/images/accounts/myimage.JPG")}
               />
               <Box>
                 <Box sx={styles.commentDetailsSection}>
@@ -133,7 +133,7 @@ const Dashboard = () => {
               <Box
                 component={"img"}
                 sx={styles.videoThumbnail}
-                src={require("../../assets/images/products/pvc2.jpg")}
+                src={require("../../assets/images/products/pvctiger1.jpg")}
               />
             </Box>
             <Divider sx={styles.divider} />
@@ -141,7 +141,7 @@ const Dashboard = () => {
             <Box sx={styles.commentsRow}>
               <Avatar
                 sx={styles.avatar}
-                src={require("../../assets/images/products/Furniture2.png")}
+                src={require("../../assets/images/accounts/myimage.JPG")}
               />
               <Box>
                 <Box sx={styles.commentDetailsSection}>
@@ -157,7 +157,7 @@ const Dashboard = () => {
               <Box
                 component={"img"}
                 sx={styles.videoThumbnail}
-                src={require("../../assets/images/products/pvc2.jpg")}
+                src={require("../../assets/images/products/Furniture2.png")}
               />
             </Box>
             <Divider sx={styles.divider} />
@@ -165,7 +165,7 @@ const Dashboard = () => {
             <Box sx={styles.commentsRow}>
               <Avatar
                 sx={styles.avatar}
-                src={require("../../assets/images/products/Furniture2.png")}
+                src={require("../../assets/images/accounts/myimage.JPG")}
               />
               <Box>
                 <Box sx={styles.commentDetailsSection}>
